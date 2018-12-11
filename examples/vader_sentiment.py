@@ -1,5 +1,13 @@
+"""
+"""
+#Enable us to import from directory above:
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)),'..'))
+
 from nltk.tokenize import word_tokenize, sent_tokenize
 import pickle
+from vader_lexicon import loadLexicon
 
 
 def get_lexicon():
@@ -16,13 +24,15 @@ def calculate_sentiment(review):
         for word in word_tokenize(sentence):
             if word in lexicon:
                 sentFactors.append(lexicon[word])
+        #Do some maths to calculate score.
         print(sentFactors)
 
 """
 -would be good to store the word and score somewhere to view
 -need to determine how to calculate the average of all 'factors'
 -rename 'factors' to something clearer
--provide a bank of example movie reviews
+
+-provide a bank of steam reviews
 """
 
 
