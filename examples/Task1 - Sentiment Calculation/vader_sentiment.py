@@ -1,22 +1,12 @@
 """
 """
-#Enable us to import from directory above:
-import sys
-import os
-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)),'..'))
-
 from nltk.tokenize import word_tokenize, sent_tokenize
-import pickle
 from vader_lexicon import loadLexicon
 
-
-def get_lexicon():
-    with open('../lexicon.pickle', 'rb') as rf:
-        lexicon = pickle.load(rf)
-    return lexicon
-
 def calculate_sentiment(review):
-    lexicon = get_lexicon()
+    lexicon = loadLexicon()
+
+    input(lexicon)
 
     factors = []
     for sentence in sent_tokenize(review):
