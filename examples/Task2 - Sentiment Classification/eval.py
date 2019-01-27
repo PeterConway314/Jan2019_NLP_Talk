@@ -1,8 +1,8 @@
 import pickle
 from nltk.tokenize import word_tokenize
 
-def word_feats(words):
-    return dict([(word.lower(), True) for word in words])
+#Import from `nb_classifier.py`:
+from nb_classifier import word_feats
 
 
 #Load our classifier from file:
